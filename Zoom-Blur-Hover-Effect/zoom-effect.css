@@ -1,0 +1,51 @@
+    /*zoom-effect.css*/
+body{
+    background-color: black;
+}
+.main-sections{
+    --zoom-in: 1.2;
+    --zoom-out: 0.9;
+    --hover-background: #792C1A;
+}
+.main-sections{
+    transition: all .5;
+}
+.main-sections:hover .card-box{
+    filter: blur(5px);
+    transform: scale(var(--zoom-out));
+}
+.card-box{
+    transform: scale(1);
+    transition: all .5s;
+}
+.card-box:hover{
+    transform: scale(var(--zoom-in)) !important;
+    z-index: 2;
+    filter: blur(0px) !important;
+    background-color: rgb(255, 4, 4);
+}
+.main-sections .elementor-widget-wrap{
+    transition: all .5s;
+}
+.main-sections .card-box:hover .elementor-widget-wrap{
+    background: var(--hover-background) !important;
+}
+
+
+/*  Summa */
+.main-sections{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+.card-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 250px;
+    text-align: justify;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+}

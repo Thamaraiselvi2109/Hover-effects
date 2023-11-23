@@ -1,0 +1,66 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.big{
+    --card-shape: 48% 52% 58% 42% / 48% 25% 75% 52%;
+    --card-hover-shape: 50%;
+    --heading-shape: 50%;
+    --heading-hover-shape: 61% 39% 38% 62% / 67% 49% 51% 33%;
+    --heading-background: #eff0f4;
+    --heading-circle-size: 80px;
+    --bubble-color: #ffffff;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.big{
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05), 25px 35px 20px rgba(0,0,0,0.05), 25px 30px 30px rgba(0,0,0,0.05), inset -20px -20px 25px rgba(255,255,255,0.9);
+    transition: 0.5s ease-in-out;
+    border-radius: var(--card-shape);
+}
+.big:hover{
+    border-radius: var(--card-hover-shape);
+}
+.big::before{
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 85px;
+    width: 35px;
+    height: 35px;
+    background: var(--bubble-color);
+    border-radius: 50%;
+    opacity: 0.9;
+}
+.big::after{
+    content: '';
+    position: absolute;
+    top: 90px;
+    left: 110px;
+    width: 15px;
+    height: 15px;
+    background: var(--bubble-color);
+    border-radius: 50%;
+    opacity: 0.9;
+}
+.big h2{
+    position: relative;
+    width: var(--heading-circle-size);
+    height: var(--heading-circle-size);
+    background: var(--heading-background);
+    border-radius: var(--heading-shape);
+    display: flex;
+    color: rgba(128, 0, 128, 0.507);
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.1), inset -2px -5px 10px rgba(255,255,255,1), 15px 15px 10px rgba(0,0,0,0.05), 15px 10px 15px rgba(0,0,0,0.025);
+}
+.big:hover h2{
+    border-radius: var(--heading-hover-shape);
+}
